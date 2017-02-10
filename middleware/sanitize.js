@@ -41,7 +41,8 @@ class BaseMessage {
 	 * @param mixed  text
 	 * @param object params
 	 */
-	send (text,params = {}) {
+	send (text,params) {
+		params = params || {};
 		if (typeof text === 'object') {
 			params = text;
 		} else {
@@ -488,7 +489,8 @@ class KickUser extends ChatEvent {
 	 *
 	 * @return Promise
 	 */
-	invite (id = this.kick) {
+	invite (id) {
+		id = id || this.kick;
 		return this.vk.api.messages.addChatUser({
 			chat_id: this.chat,
 			user_id: id
@@ -894,7 +896,8 @@ const groupFlags = Object.assign({},dialogFlags,{
  *
  * @return array
  */
-function parseFlags (sum, type = false) {
+function parseFlags (sum, type) {
+	type = type || false;
 	let list = type?groupFlags:dialogFlags;
 
 	let flags = [];
