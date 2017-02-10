@@ -1,5 +1,3 @@
-'use strict';
-
 const base = new (require('base-io'));
 
 VK = function(setting) {
@@ -226,8 +224,7 @@ VK.prototype.execute = function(name,params) {
  */
 VK.prototype.isApiError = function(error) {
 	return error instanceof this.ApiError;
-}
-
+};
 /**
  * Проверяет является ли ошибка RequestError
  *
@@ -237,7 +234,7 @@ VK.prototype.isApiError = function(error) {
  */
 VK.prototype.isRequestError = function(error) {
 	return error instanceof this.RequestError;
-}
+};
 
 /**
  * Проверяет является ли ошибка AuthError
@@ -299,7 +296,7 @@ VK.prototype.getQueue = function() {
  */
 VK.prototype.getToken = function() {
 	return this.settings.token;
-}
+};
 
 base.import(VK);
 
@@ -311,5 +308,3 @@ base
 	'primary',
 	'middleware'
 ]);
-
-module.exports = base.export();
