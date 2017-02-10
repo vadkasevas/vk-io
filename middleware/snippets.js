@@ -1,5 +1,3 @@
-'use strict';
-
 const Promise = require('bluebird');
 
 const mainTypes = /(photo|video|doc|album|topic|wall|page)([\d-]+)_(\d+)/i;
