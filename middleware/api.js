@@ -14,6 +14,7 @@ exports.API_VERSION = '5.62';
  * @return Promise
  */
 exports._api = function(method,params = {}){
+	params = params || {};
 	return new Promise((resolve,reject) => {
 		this._queue.push({
 			method,
