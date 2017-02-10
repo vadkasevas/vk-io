@@ -13,7 +13,8 @@ exports._streamHandlers = [];
  *
  * @return this
  */
-exports._getExecuteMethod = (method,params = {}) => {
+exports._getExecuteMethod = (method,params) => {
+	params = params || {};
 	return 'API.'+method+'('+JSON.stringify(params)+')';
 };
 
@@ -51,7 +52,8 @@ const replaceParams = /\"(count|offset)\":\"(\w+)\"/g;
  * @param integer max    Максимальное кол-во возможный записей
  */
 function generator (method,limit,max) {
-	add(method,function(params = {}){
+	add(method,function(params){
+		params = params || {};
 		return new Promise((resolve,reject) => {
 			let query = {
 				/* Смещение выборки */
