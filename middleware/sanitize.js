@@ -1,5 +1,3 @@
-'use strict';
-
 const util = require('util');
 const async = require('async');
 const entities = require('entities').decodeHTML;
