@@ -1,5 +1,3 @@
-'use strict';
-
 const base = new (require('base-io'));
 
 base.import(class VK {
