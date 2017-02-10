@@ -113,7 +113,8 @@ base.import(class VK {
 			
 			this.api[group] = this.api[group] || {};
 
-			this.api[group][name] = (params = {}) => {
+			this.api[group][name] = (params) => {
+				params = params || {};
 				params.client_secret = this.settings.key;
 
 				return this._api(method,params);
@@ -127,7 +128,8 @@ base.import(class VK {
 		 *
 		 * @return promise
 		 */
-		this.api.messages.send = (params = {}) => {
+		this.api.messages.send = (params) => {
+			params = params || {};
 			params.random_id = Date.now();
 
 			if ('attachment' in params && Array.isArray(params.attachment)) {
