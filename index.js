@@ -8,7 +8,8 @@ base.import(class VK {
 	 *
 	 * @param object setting
 	 */
-	constructor (setting = {}) {
+	constructor (setting) {
+		settings = settings || {};
 		/* Основные настройки */
 		this.settings = {
 			/* Идентификатор пользователя */
