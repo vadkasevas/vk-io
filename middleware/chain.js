@@ -25,7 +25,8 @@ class Chain {
 	 *
 	 * @return Promise
 	 */
-	append (method,params = {}) {
+	append (method,params) {
+		params = params || {};
 		if (this._isRun) {
 			throw new Error('Chain завершил работу!');
 		}
@@ -176,7 +177,8 @@ exports.chain = function(){
  *
  * @return Promise
  */
-exports.executes = function(name,queues = []){
+exports.executes = function(name){
+	queues = queues || [];
 	return new Promise((resolve,reject) => {
 		const chain = this.chain();
 
