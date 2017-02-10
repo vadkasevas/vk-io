@@ -488,7 +488,8 @@ add('voice',function(params){
  *  <остальные параметры>
  * }) -> promise
  */
-add('graffiti',function(params = {}){
+add('graffiti',function(params){
+	params = params || {};
 	params.type = 'graffiti';
 
 	return this.upload.doc(params);
