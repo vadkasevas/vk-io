@@ -96,8 +96,9 @@ base.import(class VK {
 		/* Установка методов VK API */
 		this.api = {};
 		this._apiMethods.forEach((method) => {
-			var [group,name] = method.split('.');
-
+			var split = method.split('.');
+			var group = split[0];
+			var name = split[1];
 			this.api[group] = this.api[group] || {};
 
 			this.api[group][name] = (params) => {
@@ -106,8 +107,10 @@ base.import(class VK {
 		});
 
 		this._secureMethods.forEach((method) => {
-			var [group,name] = method.split('.');
-
+			var split = method.split('.');
+			var group = split[0];
+			var name = split[1];
+			
 			this.api[group] = this.api[group] || {};
 
 			this.api[group][name] = (params = {}) => {
