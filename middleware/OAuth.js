@@ -1,5 +1,3 @@
-'use strict';
-
 const cheerio = require('cheerio').load;
 const request = require('request-promise');
 const queryString = require('querystring');
