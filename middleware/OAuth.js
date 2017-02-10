@@ -440,6 +440,7 @@ class DirectAuth extends Auth {
 	 * @return Promise
 	 */
 	_getToken (qs = {}) {
+		qs = qs || {};
 		qs.username = this.login || this.phone;
 		qs.client_secret = this.key;
 		qs.grant_type = 'password';
