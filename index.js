@@ -86,21 +86,11 @@ base.import(class VK {
 		};
 
 		this.logger = {
-			log: (...args) => {
-				_log('LOG',args);
-			},
-			debug: (...args) => {
-				_log('DEBUG',args);
-			},
-			info: (...args) => {
-				_log('INFO',args);
-			},
-			warn: (...args) => {
-				_log('WARN',args);
-			},
-			error: (...args) => {
-				_log('ERROR',args);
-			}
+			log: function(){_log('LOG',arguments)},
+			debug: function(){_log('DEBUG',arguments)},
+			info: function(){_log('INFO',arguments)},
+			warn: function(){_log('WARN',arguments)},
+			error: function(){_log('ERROR',arguments)},
 		};
 
 		/* Установка методов VK API */
